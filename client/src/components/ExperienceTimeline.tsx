@@ -3,12 +3,14 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, FlaskConical } from "lucide-react";
 
 const experiences = [
   {
     role: "Decision Scientist",
     company: "Mu Sigma",
+    logo: "μσ",
+    logoType: "text" as const,
     location: "Bangalore, Karnataka",
     period: "Jul 2025 — Present",
     duration: "Current",
@@ -21,6 +23,8 @@ const experiences = [
   {
     role: "Data Analytics & Cloud Operations Intern",
     company: "ITC-LABS",
+    logo: "ITC",
+    logoType: "text" as const,
     location: "Panchkula, Haryana",
     period: "Sep 2024 — Jun 2025",
     duration: "10 months",
@@ -105,8 +109,14 @@ export function ExperienceTimeline() {
                   </div>
 
                   <div className="hidden md:flex items-center justify-center">
-                    <div className="w-16 h-16 bg-primary rounded-full border-4 border-background shadow-lg flex items-center justify-center">
-                      <div className="w-4 h-4 bg-background rounded-full"></div>
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-chart-2/20 rounded-xl border-2 border-primary/30 shadow-lg flex items-center justify-center backdrop-blur-sm">
+                      {exp.logoType === "text" ? (
+                        <span className="text-2xl font-bold text-primary" data-testid={`logo-${index}`}>
+                          {exp.logo}
+                        </span>
+                      ) : (
+                        <FlaskConical className="h-10 w-10 text-primary" />
+                      )}
                     </div>
                   </div>
                 </motion.div>
