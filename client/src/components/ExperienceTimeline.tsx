@@ -3,14 +3,15 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, FlaskConical } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import muSigmaLogo from "@assets/image_1760385675115.png";
+import itcLabsLogo from "@assets/image_1760385645919.png";
 
 const experiences = [
   {
     role: "Decision Scientist",
     company: "Mu Sigma",
-    logo: "μσ",
-    logoType: "text" as const,
+    logo: muSigmaLogo,
     location: "Bangalore, Karnataka",
     period: "Jul 2025 — Present",
     duration: "Current",
@@ -23,8 +24,7 @@ const experiences = [
   {
     role: "Data Analytics & Cloud Operations Intern",
     company: "ITC-LABS",
-    logo: "ITC",
-    logoType: "text" as const,
+    logo: itcLabsLogo,
     location: "Panchkula, Haryana",
     period: "Sep 2024 — Jun 2025",
     duration: "10 months",
@@ -109,14 +109,13 @@ export function ExperienceTimeline() {
                   </div>
 
                   <div className="hidden md:flex items-center justify-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-chart-2/20 rounded-xl border-2 border-primary/30 shadow-lg flex items-center justify-center backdrop-blur-sm">
-                      {exp.logoType === "text" ? (
-                        <span className="text-2xl font-bold text-primary" data-testid={`logo-${index}`}>
-                          {exp.logo}
-                        </span>
-                      ) : (
-                        <FlaskConical className="h-10 w-10 text-primary" />
-                      )}
+                    <div className="w-20 h-20 bg-white rounded-xl border-2 border-card-border shadow-lg flex items-center justify-center p-2">
+                      <img
+                        src={exp.logo}
+                        alt={`${exp.company} logo`}
+                        className="w-full h-full object-contain"
+                        data-testid={`logo-${index}`}
+                      />
                     </div>
                   </div>
                 </motion.div>
