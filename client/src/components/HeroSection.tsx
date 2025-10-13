@@ -62,7 +62,7 @@ export function HeroSection() {
                 className="gap-2"
                 asChild
               >
-                <a href="/Garima_Jain.pdf" download="Garima_Jain_Resume.pdf">
+                <a href="/portfollio/Garima_Jain.pdf" download="Garima_Jain_Resume.pdf">
                   <Download className="h-4 w-4" /> Download Resume
                 </a>
               </Button>
