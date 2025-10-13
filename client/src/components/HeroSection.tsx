@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Download, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImage from "@assets/stock_images/professional_female__b4f13c5b.jpg";
+import { TypeAnimation } from 'react-type-animation';
+import profileImage from "@assets/stock_images/mine.png";
 
 export function HeroSection() {
   const scrollToSection = (id: string) => {
@@ -24,8 +25,22 @@ export function HeroSection() {
                 Garima Jain
               </span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-              Data Scientist
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground min-h-[2.5rem]">
+              <TypeAnimation
+                sequence={[
+                  'Data Scientist',
+                  2000,
+                  'Decision Scientist',
+                  2000,
+                  'Data Analyst',
+                  2000,
+                  'ML Engineer',
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
               Transforming data into actionable business insights through predictive modeling and advanced analytics
@@ -45,17 +60,16 @@ export function HeroSection() {
                 size="lg"
                 data-testid="button-download-resume"
                 className="gap-2"
+                asChild
               >
-                <Download className="h-4 w-4" /> Download Resume
+                <a href="/Garima_Jain.pdf" download="Garima_Jain_Resume.pdf">
+                  <Download className="h-4 w-4" /> Download Resume
+                </a>
               </Button>
             </div>
 
             <div className="flex items-center gap-6 pt-6 text-sm text-muted-foreground">
-              <span>2+ Years Experience</span>
-              <span>•</span>
-              <span>8+ Projects</span>
-              <span>•</span>
-              <span>50+ Insights Delivered</span>
+              <span>1+ Years Experience</span>
             </div>
 
             <div className="flex gap-4 pt-2">

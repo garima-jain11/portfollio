@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import churnImage from "@assets/stock_images/data_analytics_dashb_926b3bfc.jpg";
 import covidImage from "@assets/stock_images/covid-19_coronavirus_f5497853.jpg";
-
 const projects = [
   {
     title: "Telecom Customer Churn Analysis & Prediction",

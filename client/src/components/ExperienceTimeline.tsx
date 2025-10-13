@@ -109,7 +109,7 @@ export function ExperienceTimeline() {
                   </div>
 
                   <div className="hidden md:flex items-center justify-center">
-                    <div className="w-20 h-20 bg-white rounded-xl border-2 border-card-border shadow-lg flex items-center justify-center p-2">
+                    <div className="w-40 h-40 bg-white rounded-xl border-2 border-card-border shadow-lg flex items-center justify-center p-2">
                       <img
                         src={exp.logo}
                         alt={`${exp.company} logo`}

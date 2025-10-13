@@ -30,7 +30,16 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    // Copy assets to build output
+    assetsDir: 'assets',
+    // Copy attached_assets to output
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[ext]'
+      }
+    }
   },
+  publicDir: path.resolve(import.meta.dirname, "attached_assets"),
   server: {
     fs: {
       strict: true,
